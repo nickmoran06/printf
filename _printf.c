@@ -34,40 +34,32 @@ int (*function_struct(char n))(va_list)
  */
 int _printf(const char *format, ...)
 {
-	int y = 0;
+	int y = 0, i = 0;
 	va_list type;
 	int (*f)(va_list);
-	int counter = 0;
 
+	if (format == NULL)
+		return (-1);
 	if (format != NULL)
 	{
 		va_start(type, format);
-		for (counter = 0; format[counter] != '\0'; counter++)
+		for (i = 0; format[i] != '\0'; i++)
 		{
-			if (format[counter] != '%')
-				y += _putchar(format[counter]);
-			else if (format[counter] == '%' && format[counter + 1] == '\0')
+			if (format[i] != '%')
+				y += _putchar(format[i]);
+			else if (format[i] == '%' && format[i + 1] == '\0')
 				return (-1);
-			else if (format[counter] == '%' && format[counter + 1] != '\0')
+			else if (format[i] == '%' && format[i + 1] != '\0')
 			{
-				if (format[counter + 1] == '%')
+				if (format[i + 1] == '%')
+					y += _putchar(format[i]), i++;
+				else if (format[i + 1] != '\0')
 				{
-					y += _putchar(format[counter]);
-					counter++;
-				}
-				else if (format[counter + 1] != '\0')
-				{
-					f = function_struct(format[counter + 1]);
+					f = function_struct(format[i + 1]);
 					if (f)
-					{
-						y = (f(type));
-						counter++;
-					}
+						y = (f(type)), i++;
 					else
-					{
-						y += (_putchar(format[counter] + _putchar(format[counter + 1])));
-						counter++;
-					}
+						y += (_putchar(format[i] + _putchar(format[i + 1]))), i++;
 				}
 			}
 		}
