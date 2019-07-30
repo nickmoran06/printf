@@ -29,45 +29,47 @@ int (*function_struct(char n))(va_list)
 
 /**
  * _printf - printing characters and strings
- *
  * @format: Is a character string
- *
  * Return: ..
  */
 int _printf(const char *format, ...)
 {
-	int (*f)(va_list);
+	int y = 0;
 	va_list type;
+	int (*f)(va_list);
 	int counter = 0;
-	int y = -1;
 
-	va_start(type, format);
-	
 	if (format != NULL)
-	{
-		y = 0;
-		while (format[counter] != '\0')
+{
+		va_start(type, format);
+		for (counter = 0; format[counter] != '\0'; counter++)
 		{
 			if (format[counter] != '%')
-			{
-				_putchar(format[counter]);
-			}
+				y += _putchar(format[counter]);
 			else if (format[counter] == '%' && format[counter + 1] == '\0')
-			{
 				return (-1);
-			}
 			else if (format[counter] == '%' && format[counter + 1] != '\0')
 			{
-				f = function_struct(format[counter + 1]); 
-				if (f)
+				if (format[counter + 1] == '%')
 				{
-					y = (y + f(type)) - 1;
+					y += _putchar(format[counter]);
 					counter++;
 				}
-				else
-					_putchar(format[counter]);
+				else if (format[counter + 1] != '\0')
+				{
+					f = function_struct(format[counter + 1]);
+					if (f)
+					{
+						y += f(type) - 1;
+						counter++;
+					}
+					else
+					{
+						y += _putchar(format[counter] + _putchar(format[counter + 1]));
+							counter++;
+					}
+				}
 			}
-			counter++;
 		}
 	}
 	va_end(type);

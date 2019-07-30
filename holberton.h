@@ -3,6 +3,12 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
+
+/**
+ * struct stc - base struct
+ * @d: character of the format
+ * @f: function
+ */
 typedef struct stc
 {
 	char d;
