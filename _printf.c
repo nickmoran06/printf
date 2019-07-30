@@ -39,8 +39,10 @@ int _printf(const char *format, ...)
 	int (*f)(va_list);
 
 	if (format == NULL)
+	{
 		return (-1);
-	if (format != NULL)
+	}
+	else if (format != NULL)
 	{
 		va_start(type, format);
 		for (i = 0; format[i] != '\0'; i++)
@@ -57,9 +59,13 @@ int _printf(const char *format, ...)
 				{
 					f = function_struct(format[i + 1]);
 					if (f)
+					{
 						y = (f(type)), i++;
-					else
+					}
+						else
+					{
 						y += (_putchar(format[i] + _putchar(format[i + 1]))), i++;
+					}
 				}
 			}
 		}
