@@ -1,0 +1,52 @@
+.\" Manpage for _printf
+.\" Contact
+.TH man 1 "29 july 2019" "1.0" "_printf man page"
+.SH NAME
+_printf \- manual page of function _printf
+.SH SYNOPSIS
+
+#include "holberton.h"
+
+.PP
+int printf(const char *format, ...);
+.PP
+int _putchar(char c);
+
+.SH DESCRIPTION
+The function _printf show a output according to a format
+
+.SH CONVERSION SPECIFIERS
+.BR %c
+This specifier identifies characters.
+
+.BR %s
+This specifier indentifies strings.
+
+.BR %d
+.BR %i
+Are synonymous for output and menaning int as a signed decimal number
+
+.SH SEE ALSO
+_putchar() - writes the character c to stdout
+
+#include <unistd.h>
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+
+{
+
+	return (write(1, &c, 1));
+
+}
+
+.SH BUGS
+No known bugs if you found one contact to us "937@holbertonschool.com"" or "956@holbertonschool.com""
+.SH AUTHOR
+Nicolás Morán - Dilan Rincón
