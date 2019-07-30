@@ -13,6 +13,8 @@ int (*function_struct(char n))(va_list)
 	stc_p stc[] = {
 		{'c', p_charac},
 		{'s', p_string},
+		{'d', p_decimal},
+		{'i', p_decimal},
 		{0, NULL}
 	};
 
