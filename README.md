@@ -14,4 +14,5 @@ Brief description of the files in this repository
 |  README.md | This file that you are reading  |
 # Authors
 [Nicolás Morán](https://twitter.com/nickmoran06 "Nicolás Morán")
+<br>
 [Dilan Rincón](https://twitter.com/dilanDrin "Dilan Rincón")
