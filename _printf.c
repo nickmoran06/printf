@@ -14,7 +14,7 @@ int (*function_struct(char n))(va_list)
 		{'c', p_charac},
 		{'s', p_string},
 		{'d', p_decimal},
-		{'i', p_decimal},
+		{'i', p_integer},
 		{0, NULL}
 	};
 

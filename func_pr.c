@@ -47,13 +47,14 @@ int p_string(va_list type)
 int p_decimal(va_list type)
 {
 	unsigned int temp, dec, c_units, i, digit;
-	int num;
+	int num = 1, counter = 0;
 
 	num = va_arg(type, unsigned int);
 	if (num < 0)
 	{
 		_putchar('-');
 		num = num * -1;
+		counter++;
 	}
 	temp = num;
 	dec = 1;
@@ -68,6 +69,18 @@ int p_decimal(va_list type)
 		num = num % dec;
 		dec = dec / 10;
 		_putchar(digit + '0');
+		counter++;
 	}
-	return (c_units);
+	return (counter);
+}
+/**
+ * p_integer - print a decimal base 10
+ *
+ * @type: store a list of numbers
+ *
+ * Return: a decimal number
+ */
+int p_integer(va_list type)
+{
+	return (p_decimal(type));
 }
