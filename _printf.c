@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 	int counter = 0;
 
 	if (format != NULL)
-{
+	{
 		va_start(type, format);
 		for (counter = 0; format[counter] != '\0'; counter++)
 		{
@@ -66,7 +66,7 @@ int _printf(const char *format, ...)
 					else
 					{
 						y += (_putchar(format[counter] + _putchar(format[counter + 1])));
-							counter++;
+						counter++;
 					}
 				}
 			}
