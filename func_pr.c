@@ -1,3 +1,4 @@
+
 #include "holberton.h"
 
 /**
@@ -24,13 +25,14 @@ int p_charac(va_list type_pr)
 int p_string(va_list type_pr)
 {
 	int counter = 0;
+	int i = 0;
 	char *str;
 
 	str = va_arg(type_pr, char *);
 	if (str)
 	{
-		for (counter = 0; str[counter]; counter++)
-			_putchar(str[counter]);
+		for (i = 0; str[i]; i++)
+			counter += _putchar(str[i]);
 	}
 	return (counter);
 }
