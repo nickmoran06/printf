@@ -20,5 +20,6 @@ int _putchar(char c);
 int p_charac(va_list type);
 int p_string(va_list type);
 int _printf(const char *format, ...);
+int (*function_struct(char n))(va_list);
 
 #endif

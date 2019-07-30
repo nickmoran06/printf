@@ -18,7 +18,7 @@ int (*function_struct(char n))(va_list)
 
 	while (stc[counter].d != 0)
 	{
-		if (n == stc[counter].d)
+		if (stc[counter].d == n)
 		{
 			return (stc[counter].f);
 		}
@@ -60,12 +60,12 @@ int _printf(const char *format, ...)
 					f = function_struct(format[counter + 1]);
 					if (f)
 					{
-						y += f(type) - 1;
+						y = (f(type));
 						counter++;
 					}
 					else
 					{
-						y += _putchar(format[counter] + _putchar(format[counter + 1]));
+						y += (_putchar(format[counter] + _putchar(format[counter + 1])));
 							counter++;
 					}
 				}
