@@ -10,8 +10,10 @@
 int p_charac(va_list type_pr)
 {
 	int ch = va_arg(type_pr, int);
+	int counter = 0;
 
-	return (_putchar(ch));
+	counter += _putchar(ch);
+	return (counter);
 }
 
 /**
