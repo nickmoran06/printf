@@ -57,9 +57,9 @@ int _printf(const char *format, ...)
 				{
 					f = function_struct(format[i + 1]);
 					if (f)
-						y = (f(type)), i++;
+						y = y + (f(type)), i++;
 					else
-						y += (_putchar(format[i] + _putchar(format[i + 1]))), i++;
+						y += (_putchar(format[i]) + (_putchar(format[i + 1]))), i++;
 				}
 			}
 		}
