@@ -1,10 +1,14 @@
 .\" Manpage for _printf
 .\" Contact
-.TH man 1 "29 july 2019" "1.0" "_printf man page"
+.TH man 3 "29 july 2019" "1.0" "_printf man page"
 .SH NAME
 _printf \- manual page of function _printf
 .SH SYNOPSIS
-
+The function _printf show a output according to a format
+And use the own function putchar for print. 
+.PP
+This function is add to The header file holberton.h
+.PP
 #include "holberton.h"
 
 .PP
@@ -13,8 +17,27 @@ int printf(const char *format, ...);
 int _putchar(char c);
 
 .SH DESCRIPTION
-The function _printf show a output according to a format
 
+The function _printf show a output according to a format
+And use the own function putchar for print. 
+.PP
+This function is add to The header file holberton.h
+.PP
+#include "holberton.h"
+
+.PP
+int printf(const char *format, ...);
+.PP
+int _putchar(char c);
+.PP
+Example:
+.PP
+_printf("hola Dilan %c Nicolas", 'y');
+.PP
+The outpout of it is:
+.PP
+hola Dilan y Nicolas
+.PP
 .SH CONVERSION SPECIFIERS
 .BR %c
 This specifier identifies characters.
