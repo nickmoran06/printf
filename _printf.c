@@ -16,6 +16,7 @@ int (*function_struct(char n))(va_list)
 		{'d', p_decimal},
 		{'i', p_integer},
 		{'o', p_octal},
+		{'b', p_binarie},
 		{0, NULL}
 	};
 
